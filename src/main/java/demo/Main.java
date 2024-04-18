@@ -7,12 +7,13 @@ public class Main {
     public static void main(String[] args) {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-        //1st approach
+
+        /*Staff staff = context.getBean(Doctor.class);
+        staff.assist();*/
+
         Doctor doctor = context.getBean(Doctor.class);
         doctor.assist();
-
-        //2nd approach
-        Nurse nurse = (Nurse) context.getBean("nurse");
-        nurse.assist();
+        System.out.println(doctor.getQualification());
+        doctor.getNurse().assist();
     }
 }
