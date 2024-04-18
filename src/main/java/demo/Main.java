@@ -14,6 +14,5 @@ public class Main {
         Doctor doctor = context.getBean(Doctor.class);
         doctor.assist();
         System.out.println(doctor.getQualification());
-        doctor.getNurse().assist();
     }
 }
