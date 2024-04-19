@@ -7,8 +7,13 @@ public class Main {
     public static void main(String[] args) {
 
         ApplicationContext context = new AnnotationConfigApplicationContext(BeanConfig.class);
-        Staff staff = context.getBean(Doctor.class);
-        staff.assist();
+        Doctor doctor = context.getBean(Doctor.class);
+        doctor.assist();
+        doctor.setQualification("MBBS");
+        System.out.println(doctor);
 
+        Doctor doctor1 = context.getBean(Doctor.class);
+        doctor1.assist();
+        System.out.println(doctor1);
     }
 }
